@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Tyrese Cardinal</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container flex">
+        <h1 class="site-title">Tyrese Cardinal</h1>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="blog/index.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="section text-center">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-text mt-2">
+          Interested in working together or just want to say hello? Fill out the
+          form below or reach out via email.
+        </p>
+
+        <form class="contact-form mt-2" action="#" method="post">
+          <div class="grid grid-2">
+            <!-- real editable inputs -->
+            <input
+              class="form-input"
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              class="form-input"
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <!-- example of a readonly text field for display -->
+          <input
+            class="form-input mt-1"
+            type="text"
+            value="example@portfolio.com"
+            readonly
+          />
+          <textarea
+            class="form-textarea mt-1"
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit" class="btn mt-2">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-text">© 2025 Tyrese Cardinal</p>
+    </footer>
+  </body>
+</html>

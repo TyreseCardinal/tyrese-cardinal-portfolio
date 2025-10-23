@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Two | Refining the Frontend and Global Styles</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .post-meta {
+        font-size: 0.85rem;
+        color: var(--muted-text);
+        background: var(--surface-color);
+        padding: 0.1rem 0.4rem;
+        border-radius: 4px;
+        margin-left: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container flex">
+        <h1 class="site-title">Tyrese Cardinal</h1>
+        <nav class="nav">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../about.html" class="nav-link">About</a>
+          <a href="../projects.html" class="nav-link">Projects</a>
+          <a href="index.html" class="nav-link active">Blog</a>
+          <a href="../contact.html" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="section">
+        <article class="blog-post mt-2">
+          <h1 class="card-title">Refining the Frontend and Global Styles</h1>
+          <p class="date muted-text">
+            October 22nd, 2025
+            <span class="post-meta"
+              >Commit: Refine frontend structure and apply global styling
+              presets</span
+            >
+          </p>
+
+          <p class="section-text">
+            After building the foundation for my portfolio, tonight’s focus was
+            on tightening up the front end. I finalized the color palette,
+            adjusted font scaling, and gave each section consistent spacing.
+            Everything now feels more cohesive and intentional.
+          </p>
+
+          <h2 class="section-subtitle">What I Updated</h2>
+          <p class="section-text">
+            I refined every HTML file to ensure class names match the styling
+            presets defined in <code>style.css</code>. I also polished the grid
+            and flex layouts, added utility classes for consistent margins and
+            paddings, and improved how the site scales on smaller screens.
+          </p>
+
+          <h2 class="section-subtitle">What I Learned</h2>
+          <p class="section-text">
+            Design consistency isn’t just aesthetics—it’s workflow clarity.
+            Having standardized utility classes for layout makes future edits
+            way easier and keeps my code cleaner. It’s basically early-stage
+            scalability.
+          </p>
+
+          <h2 class="section-subtitle">Challenges</h2>
+          <p class="section-text">
+            One annoying issue was the blinking cursor appearing on static text.
+            Turns out it wasn’t a CSS bug at all—it was caret browsing in the
+            browser itself. After confirming it wasn’t a code issue, I laughed,
+            disabled it, and moved on.
+          </p>
+
+          <h2 class="section-subtitle">Takeaway</h2>
+          <p class="section-text">
+            With the base design finalized, I’m finally happy with how the
+            portfolio feels. Tomorrow, I’ll start experimenting with interactive
+            polish—hover animations, maybe a light/dark mode toggle, and small
+            UX touches that make it feel personal.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-text">
+        © 2025 Tyrese Cardinal | Built with patience and caffeine
+      </p>
+    </footer>
+  </body>
+</html>

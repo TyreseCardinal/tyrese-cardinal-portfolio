@@ -2,17 +2,78 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog | Tyrese Cardinal</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* Inline helper for new post-number tag */
+      .post-number {
+        background: var(--surface-color);
+        color: var(--muted-text);
+        font-size: 0.8rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        margin-left: 0.5rem;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1>Blog</h1>
+    <header class="header">
+      <div class="container flex">
+        <h1 class="site-title">Tyrese Cardinal</h1>
+        <nav class="nav">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../about.html" class="nav-link">About</a>
+          <a href="../projects.html" class="nav-link">Projects</a>
+          <a href="index.html" class="nav-link active">Blog</a>
+          <a href="../contact.html" class="nav-link">Contact</a>
+        </nav>
+      </div>
     </header>
-    <main>
-      <ul>
-        <li><a href="first-post.html">My First Blog Post</a> – Oct 21, 2025</li>
-      </ul>
+
+    <main class="container main">
+      <section class="section">
+        <h2 class="section-title text-center">Blog</h2>
+        <div class="grid grid-2 mt-2">
+          <!-- Post Two -->
+          <div class="card blog-card">
+            <h3 class="card-title">
+              <a href="post-two.html" class="blog-link">
+                Refine frontend structure and apply global styling presets
+              </a>
+            </h3>
+            <div class="muted-text">
+              <small>October 22, 2025</small>
+              <span class="post-number">Post #2</span>
+            </div>
+            <p class="card-text mt-1">
+              Focused on refining the portfolio layout and applying consistent
+              styling presets across every page to unify the site.
+            </p>
+          </div>
+
+          <!-- Post One -->
+          <div class="card blog-card">
+            <h3 class="card-title">
+              <a href="post-one.html" class="blog-link">
+                Initialize portfolio project structure
+              </a>
+            </h3>
+            <div class="muted-text">
+              <small>October 21, 2025</small>
+              <span class="post-number">Post #1</span>
+            </div>
+            <p class="card-text mt-1">
+              Finally starting my portfolio after too much overthinking — the
+              night I decided to just build something real.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <p class="footer-text">© 2025 Tyrese Cardinal</p>
+    </footer>
   </body>
 </html>

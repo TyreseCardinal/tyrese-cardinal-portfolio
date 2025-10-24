@@ -1,0 +1,21 @@
+/* ============================================================
+   Projects Page – Styling
+   ============================================================ */
+
+.project-card {
+  background-color: var(--beige);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  color: var(--primary);
+}

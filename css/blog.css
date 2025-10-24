@@ -1,0 +1,43 @@
+/* ============================================================
+   Blog Page – Styling
+   ============================================================ */
+
+.blog-card {
+  background-color: var(--beige);
+  border-left: 6px solid var(--primary);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.blog-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.muted-text {
+  color: var(--secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-number {
+  background-color: var(--accent);
+  color: var(--text-inverse);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}

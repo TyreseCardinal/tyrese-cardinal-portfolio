@@ -1,10 +1,33 @@
-/* ===================================
-   BASE SETUP
-   -----------------------------------
-   Global resets, root defaults, and
-   universal settings.
-=================================== */
+/* ============================================================
+   Tyrese Cardinal Portfolio – style.css (Final Warm Edition)
+   ============================================================ */
 
+/* ---------- Root Variables ---------- */
+:root {
+  --primary: #003049;
+  --secondary: #12376b;
+  --tertiary: #457b9d;
+  --accent: #5090b5;
+  --beige: #d6c1a0;
+  --bg: #fcf8ef; /* slightly warm off-white */
+  --text: #000000;
+  --text-inverse: #ffffff;
+  --transition-fast: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+[data-theme="dark"] {
+  --primary: #003049;
+  --secondary: #12376b;
+  --tertiary: #3c6f8c;
+  --accent: #3c6f8c;
+  --beige: #2a2a2a;
+  --bg: #1c1c1c;
+  --text: #ffffff;
+  --text-inverse: #ffffff;
+}
+
+/* ---------- Reset & Base ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -16,533 +39,287 @@ html {
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: "Fira Code", Verdana, sans-serif;
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
   line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color var(--transition-slow),
+    color var(--transition-slow);
 }
 
-/* Link and list defaults */
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--accent-hover);
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Image defaults */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ===================================
-   COLOR VARIABLES
-   -----------------------------------
-   Define your design palette here.
-   Use these throughout the site.
-=================================== */
-
-:root {
-  --bg-color: #0f0f1a;
-  --surface-color: #1c1c71;
-  --surface-alt: #2a2a88;
-  --text-color: #f4f4f4;
-  --muted-text: #b8b8d1;
-  --accent-color: #50a0ff;
-  --accent-hover: #6ab5ff;
-  --border-color: #3a3a8a;
-  --card-bg: #181845;
-}
-
-/* ===================================
-   TYPOGRAPHY
-   -----------------------------------
-   Font sizes, headings, and spacing
-   rhythm for consistent scaling.
-=================================== */
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Fira Code", Verdana, sans-serif;
-  font-weight: 600;
-  margin-bottom: 0.5em;
-  color: var(--text-color);
-}
-
-p {
-  color: var(--text-color);
-  margin-bottom: 1em;
-  font-size: 1rem;
-}
-
-small {
-  color: var(--muted-text);
-  font-size: 0.85rem;
-}
-
-/* Typography scale */
-h1 {
-  font-size: 2.25rem;
-}
-
-h2 {
-  font-size: 1.75rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.25rem;
-}
-
-/* ===================================
-   LAYOUT / GRID
-   -----------------------------------
-   Containers, grids, and responsive
-   breakpoints.
-=================================== */
-
+/* ---------- Utility Classes ---------- */
 .container {
-  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 0;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
+  padding: 0 2rem;
 }
 
 .flex {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
-
-/* Responsive grid columns */
-@media (min-width: 768px) {
-  .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ===================================
-   COMPONENTS
-   -----------------------------------
-   Header, nav, buttons, cards, footer.
-=================================== */
-
-/* HEADER & NAV */
-header {
-  background: var(--surface-color);
-  padding: 1rem 0;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-nav {
-  margin-top: 0.5rem;
-}
-
-nav a {
-  color: var(--text-color);
-  margin: 0 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-nav a:hover {
-  color: var(--accent-color);
-}
-
-/* MAIN SECTIONS */
-main {
-  flex: 1;
-}
-
-section {
-  padding: 3rem 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-/* BUTTONS */
-button,
-.btn {
-  background-color: var(--accent-color);
-  border: none;
-  color: var(--bg-color);
-  padding: 0.6rem 1.2rem;
-  font-family: inherit;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-button:hover,
-.btn:hover {
-  background-color: var(--accent-hover);
-}
-
-/* CARDS (projects, blog posts) */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* FOOTER */
-footer {
-  background: var(--surface-color);
-  color: var(--muted-text);
-  text-align: center;
-  padding: 1.5rem 0;
-  font-size: 0.9rem;
-  border-top: 1px solid var(--border-color);
-}
-
-/* ===================================
-   UTILITIES
-   -----------------------------------
-   Helper classes for quick tweaks.
-=================================== */
 
 .text-center {
   text-align: center;
 }
 
 .mt-1 {
+  margin-top: 0.75rem;
+}
+.mt-2 {
   margin-top: 1rem;
 }
-
-.mt-2 {
-  margin-top: 2rem;
-}
-
 .mt-3 {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
-.mb-1 {
-  margin-bottom: 1rem;
+/* ---------- Global Grid Utilities ---------- */
+.grid {
+  display: grid;
+  gap: 2rem;
 }
 
-.mb-2 {
-  margin-bottom: 2rem;
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.mb-3 {
-  margin-bottom: 3rem;
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.p-1 {
-  padding: 1rem;
+/* ---------- Header & Navigation ---------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(rgba(0, 48, 73, 0.95), rgba(0, 48, 73, 0.85));
+  backdrop-filter: blur(6px);
+  color: var(--text-inverse);
+  border-bottom: 4px solid var(--beige);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out,
+    background-color var(--transition-fast);
 }
 
-.p-2 {
-  padding: 2rem;
+.header.hidden {
+  transform: translateY(-100%);
 }
 
-.p-3 {
-  padding: 3rem;
+.site-title {
+  font-family: "Verdana Pro", sans-serif;
+  font-weight: 700;
+  color: var(--text-inverse);
+  font-size: 1.4rem;
 }
 
-/* ===================================
-   RESPONSIVE BREAKPOINTS
-   -----------------------------------
-   Tablet and mobile adjustments.
-=================================== */
+.nav {
+  display: flex;
+  gap: 1.25rem;
+}
 
-@media (max-width: 768px) {
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
+.nav-link {
+  color: var(--text-inverse);
+  text-decoration: none;
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color var(--transition-fast);
+}
 
-  section {
-    padding: 2rem 0;
-  }
+.nav-link:hover {
+  color: var(--accent);
+}
 
+.nav-link.active::before,
+.nav-link.active::after {
+  position: absolute;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.nav-link.active::before {
+  content: ">";
+  left: -0.7rem;
+}
+
+.nav-link.active::after {
+  content: "<";
+  right: -0.7rem;
+}
+
+/* ---------- Main & Sections ---------- */
+.main {
+  padding-top: 100px; /* spacing for fixed header */
+}
+
+.section {
+  padding: 64px 0;
+  transition: background-color var(--transition-slow);
+}
+
+/* Warm hero section */
+.main .section:first-child {
+  background-color: var(--beige);
+}
+
+.section.alt {
+  background-color: var(--beige);
+  border-radius: 8px;
+  padding: 4rem 2rem;
+}
+
+.section:nth-child(even) {
+  background-color: var(--beige);
+}
+
+.section-title {
+  font-family: "Verdana Pro", sans-serif;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.section-text {
+  font-family: "Fira Code", monospace;
+  color: var(--text);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ---------- Card Base ---------- */
+.card {
+  background-color: var(--beige);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background-color: #f1e9d9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-family: "Verdana Pro", sans-serif;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-family: "Fira Code", monospace;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 24px;
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  transition: background-color var(--transition-fast),
+    color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn:hover {
+  background-color: var(--beige);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: var(--primary);
+  color: var(--beige);
+  text-align: center;
+  padding: 3rem 1rem;
+  font-family: "Fira Code", monospace;
+  border-top: 4px solid var(--beige);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+}
+
+/* ---------- Accessibility ---------- */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip-to-content {
+  position: absolute;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-to-content:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  background-color: var(--accent);
+  color: var(--text-inverse);
+  z-index: 1001;
+}
+
+/* ---------- Responsiveness ---------- */
+@media (max-width: 480px) {
   h1 {
     font-size: 1.8rem;
   }
-}
-
-@media (max-width: 480px) {
-  body {
+  .nav {
+    gap: 0.75rem;
+  }
+  .nav-link {
     font-size: 0.9rem;
   }
-
-  .container {
-    width: 95%;
-  }
-}
-
-/* ===================================
-   FORMS
-   -----------------------------------
-   Styling and interaction rules for
-   input fields, textareas, and buttons
-=================================== */
-
-/* General form styling (already active inputs) */
-.form-input,
-.form-textarea {
-  width: 100%;
-  padding: 0.6rem;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background: var(--card-bg);
-  color: var(--text-color);
-  font-family: inherit;
-  resize: vertical;
-}
-
-/* Remove glow on focus */
-.form-input:focus,
-.form-textarea:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
-/* Make read-only fields inert (no blinking cursor) */
-input[readonly],
-textarea[readonly] {
-  pointer-events: none;
-  user-select: none;
-  caret-color: transparent;
-  opacity: 0.9;
-  /* subtle visual cue */
-}
-
-/* Optional: differentiate readonly visually */
-input[readonly] {
-  background-color: var(--surface-color);
-  color: var(--muted-text);
-}
-
-textarea[readonly] {
-  background-color: var(--surface-color);
-  color: var(--muted-text);
-}
-
-/* ===================================
-   BASE SETUP
-   -----------------------------------
-   Global resets, root defaults, and
-   universal settings.
-
-   Included styles:
-   • * ................ Universal reset for margins, padding, box-sizing
-   • html .............. Smooth scrolling
-   • body .............. Global font, background, and flex layout
-   • a, a:hover ........ Link color + hover transition
-   • ul ................ Removes list bullets and padding
-   • img ............... Ensures images scale and display block
-=================================== */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: "Fira Code", Verdana, sans-serif;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--accent-hover);
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ===================================
-   COLOR VARIABLES
-   -----------------------------------
-   Define your design palette here.
-   Use these throughout the site.
-
-   Included styles:
-   • :root ............. Global CSS variables
-   • --bg-color ........ Page background
-   • --surface-color ... Header/footer background
-   • --surface-alt ..... Alternate surface
-   • --text-color ...... Main body text
-   • --muted-text ...... Secondary text
-   • --accent-color .... Links & highlight elements
-   • --accent-hover .... Hover tone
-   • --border-color .... Outlines & dividers
-   • --card-bg ......... Card background
-=================================== */
-
-:root {
-  --bg-color: #0f0f1a;
-  --surface-color: #1c1c71;
-  --surface-alt: #2a2a88;
-  --text-color: #f4f4f4;
-  --muted-text: #b8b8d1;
-  --accent-color: #50a0ff;
-  --accent-hover: #6ab5ff;
-  --border-color: #3a3a8a;
-  --card-bg: #181845;
-}
-
-/* ===================================
-   TYPOGRAPHY
-   -----------------------------------
-   Font sizes, headings, and spacing
-   rhythm for consistent scaling.
-
-   Included styles:
-   • h1–h4 ............. Font family, weight, color
-   • p ................. Base text size & spacing
-   • small ............. Muted text style
-   • h1–h4 size scale .. Responsive heading sizes
-=================================== */
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Fira Code", Verdana, sans-serif;
-  font-weight: 600;
-  margin-bottom: 0.5em;
-  color: var(--text-color);
-}
-
-p {
-  color: var(--text-color);
-  margin-bottom: 1em;
-  font-size: 1rem;
-}
-
-small {
-  color: var(--muted-text);
-  font-size: 0.85rem;
-}
-
-h1 {
-  font-size: 2.25rem;
-}
-
-h2 {
-  font-size: 1.75rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.25rem;
-}
-
-/* ===================================
-   LAYOUT / GRID
-   -----------------------------------
-   Containers, grids, and responsive
-   breakpoints.
-
-   Included styles:
-   • .container ......... Page width limits & centering
-   • .grid .............. Generic grid layout
-   • .flex .............. Basic flex alignment
-   • .grid-2 / .grid-3 .. Responsive column helpers
-=================================== */
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 @media (min-width: 768px) {
-  .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
+  .section {
+    padding: 80px 0;
   }
-
-  .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
+  .section-title {
+    font-size: 2.3rem;
   }
 }
 
-/* ===================================
-   COMPONENTS
-   -----------------------------------
-   Header, nav, buttons, cards, footer.
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  .header .container {
+    padding: 0 3rem;
+  }
+}
 
-   Included styles:
-   • header ............. Site header styling
-   • nav, nav a ......... Navigation bar + links
-   • main, section ...... Section padding & borders
-   • .btn, button ....... Buttons & hover states
-   • .card .............. Cards for projects/blog posts
-   • footer ............. Footer layout & text
-=================================== */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+}

@@ -1,0 +1,41 @@
+/* ============================================================
+   Contact Page – Styling
+   ============================================================ */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.form-input:hover,
+.form-textarea:hover {
+  border-color: var(--secondary);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--accent);
+  background-color: var(--beige);
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 150px;
+}

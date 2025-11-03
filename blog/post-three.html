@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Refine global design system and modular page structure | Tyrese Cardinal
+    </title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container flex">
+        <h1 class="site-title">Tyrese Cardinal</h1>
+        <nav class="nav">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../about.html" class="nav-link">About</a>
+          <a href="../projects.html" class="nav-link">Projects</a>
+          <a href="index.html" class="nav-link active">Blog</a>
+          <a href="../contact.html" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="section">
+        <h2 class="section-title text-center">
+          Refine Global Design System & Modular Page Structure
+        </h2>
+
+        <p class="section-text mt-2">
+          <strong>Date:</strong> October 24, 2025<br />
+          <strong>Post #3</strong>
+        </p>
+
+        <p class="section-text mt-2">
+          This update focused on refining the overall color palette,
+          restructuring global styles, and introducing modular CSS for each
+          page. The main goal was to make the portfolio more maintainable while
+          ensuring a consistent visual identity across every section.
+        </p>
+
+        <p class="section-text mt-2">
+          The beige and navy palette was finalized — providing a warm,
+          professional look that fits the portfolio’s tone. Global typography,
+          button styles, and section spacing were unified, with the layout now
+          using global grid utilities (<code>.grid</code>, <code>.grid-2</code>,
+          <code>.grid-3</code>) for responsive behavior. Page-specific
+          stylesheets were created for the Blog, Projects, and Contact pages to
+          keep the codebase modular.
+        </p>
+
+        <p class="section-text mt-2">
+          Accessibility improvements were also introduced, including
+          focus-visible outlines and clean visual hierarchy for text and
+          buttons. The result is a more cohesive, readable, and scalable design
+          system ready for future features like dark mode and the upcoming About
+          page layout.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-text">© 2025 Tyrese Cardinal</p>
+      <button id="theme-toggle" class="btn">Dark Mode</button>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

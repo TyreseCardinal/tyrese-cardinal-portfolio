@@ -1,30 +1,25 @@
 /* ============================================================
-   Tyrese Cardinal Portfolio – style.css (Final Warm Edition)
+   Tyrese Cardinal Portfolio – style.css (Navy & Beige Edition)
    ============================================================ */
 
-/* ---------- Root Variables ---------- */
-:root {
-  --primary: #003049;
-  --secondary: #12376b;
-  --tertiary: #457b9d;
-  --accent: #5090b5;
-  --beige: #d6c1a0;
-  --bg: #fcf8ef; /* slightly warm off-white */
-  --text: #000000;
-  --text-inverse: #ffffff;
-  --transition-fast: 0.3s ease;
-  --transition-slow: 0.6s ease;
-}
+/* ============================================================
+   NAVY & BEIGE COLOR SYSTEM – SCHEMECOLOR VERSION
+   ============================================================ */
 
-[data-theme="dark"] {
-  --primary: #003049;
-  --secondary: #12376b;
-  --tertiary: #3c6f8c;
-  --accent: #3c6f8c;
-  --beige: #2a2a2a;
-  --bg: #1c1c1c;
-  --text: #ffffff;
-  --text-inverse: #ffffff;
+:root,
+[data-theme="light"] {
+  --primary: #07005C;       /* deep navy */
+  --secondary: #000281;     /* accent navy */
+  --tertiary: #C2A688;      /* muted beige */
+  --background: #D2B896;    /* warm beige base */
+  --bg: #D2B896;            /* alias for background */
+  --highlight: #E4CBA3;     /* light beige for hovers or subtle contrast */
+  --text: #000000;          /* dark text for light areas */
+  --text-inverse: #ffffff;  /* light text for navy sections */
+  --border: #cbb79c;        /* beige-gray divider */
+  --shadow: rgba(0, 0, 0, 0.12);
+  --beige: #C2A688;         /* alias for tertiary */
+  --accent: #000281;        /* alias for secondary - used for accents */
 }
 
 /* ---------- Reset & Base ---------- */
@@ -32,6 +27,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 html {
@@ -44,8 +41,6 @@ body {
   line-height: 1.6;
   background-color: var(--bg);
   color: var(--text);
-  transition: background-color var(--transition-slow),
-    color var(--transition-slow);
 }
 
 /* ---------- Utility Classes ---------- */
@@ -68,9 +63,11 @@ body {
 .mt-1 {
   margin-top: 0.75rem;
 }
+
 .mt-2 {
   margin-top: 1rem;
 }
+
 .mt-3 {
   margin-top: 1.5rem;
 }
@@ -95,13 +92,12 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(rgba(0, 48, 73, 0.95), rgba(0, 48, 73, 0.85));
+  background: linear-gradient(rgba(18, 40, 56, 0.95), rgba(18, 40, 56, 0.85));
   backdrop-filter: blur(6px);
   color: var(--text-inverse);
-  border-bottom: 4px solid var(--beige);
+  border-bottom: 4px solid var(--primary);
   z-index: 1000;
-  transition: transform 0.3s ease-in-out,
-    background-color var(--transition-fast);
+  transition: transform 0.3s ease-in-out;
 }
 
 .header.hidden {
@@ -110,7 +106,7 @@ body {
 
 .site-title {
   font-family: "Verdana Pro", sans-serif;
-  font-weight: 700;
+  font-weight: 300;
   color: var(--text-inverse);
   font-size: 1.4rem;
 }
@@ -126,7 +122,6 @@ body {
   font-family: "Fira Code", monospace;
   font-size: 0.95rem;
   position: relative;
-  transition: color var(--transition-fast);
 }
 
 .nav-link:hover {
@@ -150,29 +145,39 @@ body {
   right: -0.7rem;
 }
 
+/* ---------- Theme Toggle Button ---------- */
+#theme-toggle {
+  margin-left: auto;
+  background-color: var(--accent);
+  color: var(--text-inverse);
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+}
+
+#theme-toggle:hover {
+  background-color: var(--beige);
+  color: var(--primary);
+}
+
 /* ---------- Main & Sections ---------- */
 .main {
-  padding-top: 100px; /* spacing for fixed header */
+  padding-top: 100px;
 }
 
 .section {
   padding: 64px 0;
-  transition: background-color var(--transition-slow);
-}
-
-/* Warm hero section */
-.main .section:first-child {
-  background-color: var(--beige);
+  transition: background-color 0.3s ease;
 }
 
 .section.alt {
   background-color: var(--beige);
+  color: var(--text);
   border-radius: 8px;
   padding: 4rem 2rem;
-}
-
-.section:nth-child(even) {
-  background-color: var(--beige);
 }
 
 .section-title {
@@ -194,14 +199,13 @@ body {
   background-color: var(--beige);
   border-radius: 8px;
   padding: 1.5rem;
-  transition: transform var(--transition-fast),
-    box-shadow var(--transition-fast), background-color var(--transition-fast);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  background-color: #f1e9d9;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: var(--highlight);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .card-title {
@@ -230,8 +234,7 @@ body {
   border: none;
   background-color: var(--primary);
   color: var(--text-inverse);
-  transition: background-color var(--transition-fast),
-    color var(--transition-fast), transform var(--transition-fast);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
@@ -252,11 +255,11 @@ body {
 /* ---------- Footer ---------- */
 .footer {
   background-color: var(--primary);
-  color: var(--beige);
+  color: var(--text-inverse);
   text-align: center;
   padding: 3rem 1rem;
   font-family: "Fira Code", monospace;
-  border-top: 4px solid var(--beige);
+  border-top: 2px solid var(--accent);
 }
 
 .footer-text {
@@ -292,9 +295,11 @@ body {
   h1 {
     font-size: 1.8rem;
   }
+
   .nav {
     gap: 0.75rem;
   }
+
   .nav-link {
     font-size: 0.9rem;
   }
@@ -304,6 +309,7 @@ body {
   .section {
     padding: 80px 0;
   }
+
   .section-title {
     font-size: 2.3rem;
   }
@@ -313,6 +319,7 @@ body {
   h1 {
     font-size: 2.8rem;
   }
+
   .header .container {
     padding: 0 3rem;
   }
@@ -322,4 +329,138 @@ body {
   .container {
     max-width: 1400px;
   }
+}
+
+/* ============================================================
+   ABOUT PAGE STYLES
+   ============================================================ */
+
+.about-hero {
+  align-items: center;
+}
+
+.about-hero .hero-text {
+  padding-right: 2rem;
+}
+
+.about-hero img {
+  width: 100%;
+  max-width: 350px;
+  justify-self: center;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.about-hero img:hover {
+  transform: scale(1.03);
+}
+
+.skills {
+  margin-top: 3rem;
+}
+
+.skills .card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.philosophy {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   DARK MODE STYLES – Navy & Beige Palette
+   ============================================================ */
+
+[data-theme="dark"] {
+  --primary: #00022a;       /* deepened navy background */
+  --secondary: #07005C;     /* softer navy accent */
+  --tertiary: #B59474;      /* darker beige tone */
+  --background: #0d0d1a;    /* near-black navy */
+  --bg: #0d0d1a;            /* alias for background */
+  --highlight: #c8ad8a;     /* warm muted highlight */
+  --text: #ffffff;          /* white text on dark backgrounds */
+  --text-inverse: #000000;  /* black for light elements */
+  --border: #1e2133;        /* subtle navy divider */
+  --shadow: rgba(0, 0, 0, 0.5);
+  --beige: #B59474;         /* alias for tertiary */
+  --accent: #07005C;        /* alias for secondary - used for accents */
+}
+
+/* ---------- Header & Navigation ---------- */
+[data-theme="dark"] .header {
+  background: linear-gradient(rgba(13, 26, 38, 0.95), rgba(13, 26, 38, 0.85));
+  border-bottom: 3px solid var(--tertiary);
+}
+
+[data-theme="dark"] .site-title {
+  color: var(--text);
+}
+
+[data-theme="dark"] .nav-link {
+  color: var(--text);
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: var(--tertiary);
+}
+
+[data-theme="dark"] .nav-link.active::before,
+[data-theme="dark"] .nav-link.active::after {
+  color: var(--tertiary);
+}
+
+/* ---------- Sections ---------- */
+[data-theme="dark"] .section.alt {
+  background-color: var(--secondary);
+  color: var(--text);
+}
+
+/* ---------- Cards ---------- */
+[data-theme="dark"] .card {
+  background-color: var(--border);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+[data-theme="dark"] .skills .card {
+  background-color: var(--primary);
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+/* ---------- Buttons ---------- */
+[data-theme="dark"] .btn {
+  background-color: var(--tertiary);
+  color: var(--text);
+}
+
+[data-theme="dark"] .btn:hover {
+  background-color: var(--highlight);
+  color: var(--text-inverse);
+  border: 2px solid var(--tertiary);
+}
+
+/* ---------- Footer ---------- */
+[data-theme="dark"] .footer {
+  background-color: var(--primary);
+  color: var(--text);
+  border-top: 2px solid var(--border);
+}
+
+[data-theme="dark"] .footer-text {
+  color: var(--text);
+}
+
+/* ---------- Theme Toggle Button ---------- */
+[data-theme="dark"] #theme-toggle {
+  background-color: var(--secondary);
+  color: var(--text);
+}
+
+[data-theme="dark"] #theme-toggle:hover {
+  background-color: var(--highlight);
+  color: var(--text-inverse);
 }

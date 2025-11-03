@@ -1,46 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About | Tyrese Cardinal</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container flex">
-        <h1 class="site-title">Tyrese Cardinal</h1>
-        <nav class="nav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link active">About</a>
-          <a href="projects.html" class="nav-link">Projects</a>
-          <a href="blog/index.html" class="nav-link">Blog</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Tyrese Cardinal Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container flex">
+      <h1 class="site-title">Tyrese Cardinal</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="blog/index.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main">
+    <!-- Hero Section -->
+    <section class="section hero about-hero">
+      <div class="grid grid-2">
+        <div class="hero-text">
+          <h1>About Me</h1>
+          <p>
+            I’m <strong>Tyrese Cardinal</strong>, a full-stack developer with a taste
+            for clean design and functional architecture. I build projects
+            that balance logic, performance, and visual storytelling.
+          </p>
+          <a href="projects.html" class="btn">View My Work</a>
+        </div>
+
+        <div class="hero-image">
+          <img src="img/profile.jpg" alt="Portrait of Tyrese Cardinal" />
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main class="container main">
-      <section class="section text-center">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-text mt-2">
-          I’m a full-stack developer and designer with a focus on building web
-          applications that balance functionality and aesthetics. My work spans
-          both front-end frameworks and back-end systems — from clean responsive
-          layouts to database-driven logic.
-        </p>
-        <p class="section-text">
-          I specialize in full-stack development using technologies like
-          <strong>ASP.NET MVC</strong>, <strong>Vue.js</strong>,
-          <strong>Flask</strong>, and <strong>MariaDB</strong>. This portfolio
-          is both a showcase of my projects and a personal sandbox where I
-          experiment and grow.
-        </p>
-      </section>
-    </main>
+    <!-- Skills Section -->
+    <section class="section alt skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Frontend</h3>
+          <p>HTML5, CSS3, JavaScript, Vue.js, Responsive Design</p>
+        </div>
+        <div class="card">
+          <h3>Backend</h3>
+          <p>Python Flask, C#, ASP.NET MVC, SQL, REST APIs</p>
+        </div>
+        <div class="card">
+          <h3>Tools</h3>
+          <p>Git, GitKraken, VS Code, Figma, Photoshop</p>
+        </div>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <p class="footer-text">© 2025 Tyrese Cardinal</p>
-    </footer>
-  </body>
+    <!-- Values / Philosophy -->
+    <section class="section philosophy">
+      <h2 class="section-title">Development Philosophy</h2>
+      <p>
+        Code should feel good to read and look good to use. My goal is to
+        design systems that are minimal, intentional, and human-friendly.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button id="theme-toggle" class="btn">Dark Mode</button>
+    <p class="footer-text">© 2025 Tyrese Cardinal. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
 </html>
